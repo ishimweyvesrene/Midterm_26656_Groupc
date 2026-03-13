@@ -2,6 +2,8 @@ package com.example.EventManagementSystem.model;
 
 import java.time.LocalDateTime;
 
+// Requirement 2: Location saving with hierarchical self-referencing Many-to-One relationship
+// Supports Province -> City -> Venue hierarchy using parent_id foreign key
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
