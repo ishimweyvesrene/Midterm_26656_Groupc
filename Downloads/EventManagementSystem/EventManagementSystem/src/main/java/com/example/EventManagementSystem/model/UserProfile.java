@@ -1,5 +1,7 @@
 package com.example.EventManagementSystem.model;
 
+// Requirement 6: One-to-One relationship - One User has exactly One UserProfile
+// Bidirectional mapping with User entity, owned by User side
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
