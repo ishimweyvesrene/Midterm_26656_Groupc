@@ -3,6 +3,9 @@ package com.example.EventManagementSystem.model;
 import java.util.HashSet;
 import java.util.Set;
 
+// Requirement 6: One-to-One Relationship with UserProfile
+// Requirement 5: Many-to-One Relationship with Location
+// Requirement 4: Many-to-Many Relationship with Event through join table
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
