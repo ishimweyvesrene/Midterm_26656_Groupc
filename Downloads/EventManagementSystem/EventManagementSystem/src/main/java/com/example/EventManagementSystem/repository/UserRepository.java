@@ -19,11 +19,13 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // Checks existence of a user by email
     boolean existsByEmail(String email);
 
-    // Requirement 8: Retrieve all users from a given province using province code OR province name
+    // Requirement 8: Retrieve all users from a given province using province code
+    // OR province name
     // Using JPQL with @Query and @Param for named parameters
     @Query("SELECT u FROM User u WHERE u.location.code = :code OR u.location.name = :name")
     List<User> findUsersByProvinceCodeOrName(@Param("code") String code, @Param("name") String name);
 
-    // Requirement 3: Sorting and Pagination functionality is provided by default through JpaRepository
+    // Requirement 3: Sorting and Pagination functionality is provided by default
+    // through JpaRepository
     // Page<User> findAll(Pageable pageable); is inherited
 }

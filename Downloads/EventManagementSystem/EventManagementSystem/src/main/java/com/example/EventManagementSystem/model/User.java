@@ -94,7 +94,7 @@ public class User {
 
     public void setProfile(UserProfile profile) {
         this.profile = profile;
-        if(profile != null) {
+        if (profile != null) {
             profile.setUser(this);
         }
     }

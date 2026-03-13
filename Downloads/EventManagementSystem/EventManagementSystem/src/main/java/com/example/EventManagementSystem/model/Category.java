@@ -71,7 +71,7 @@ public class Category {
     public void setEvents(Set<Event> events) {
         this.events = events;
     }
-    
+
     // Helper method to add event
     public void addEvent(Event event) {
         events.add(event);
