@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
+// Requirement 3: Many-to-Many relationship with Event_Attendees join table
+// Requirement 4: Many-to-One relationships with Category and Location (Venue)
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -44,11 +46,7 @@ public class Event {
     // Many-to-Many relationship to User
     // Join table to manage the relationship
     @ManyToMany
-    @JoinTable(
-        name = "event_attendees",
-        joinColumns = @JoinColumn(name = "event_id"),
-        inverseJoinColumns = @JoinColumn(name = "user_id")
-    )
+    @JoinTable(name = "event_attendees", joinColumns = @JoinColumn(name = "event_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Set<User> attendees = new HashSet<>();
 
     public Event() {
@@ -115,12 +113,12 @@ public class Event {
     public void setAttendees(Set<User> attendees) {
         this.attendees = attendees;
     }
-    
+
     public void addAttendee(User user) {
         this.attendees.add(user);
         user.getEvents().add(this);
     }
-    
+
     public void removeAttendee(User user) {
         this.attendees.remove(user);
         user.getEvents().remove(this);
