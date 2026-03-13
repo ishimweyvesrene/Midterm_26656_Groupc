@@ -3,6 +3,8 @@ package com.example.EventManagementSystem.model;
 import java.util.HashSet;
 import java.util.Set;
 
+// Requirement 5: One-to-Many relationship - One Category can have Multiple Events
+// Uses mappedBy to indicate bidirectional relationship with Event entity
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
